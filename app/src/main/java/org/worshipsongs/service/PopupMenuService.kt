@@ -134,7 +134,7 @@ class PopupMenuService
         val file = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "$songName.pdf")
 
         val printAttrs = PrintAttributes.Builder().setColorMode(PrintAttributes.COLOR_MODE_COLOR).setMediaSize(PrintAttributes.MediaSize.ISO_A4).setResolution(PrintAttributes.Resolution("zooey", PRINT_SERVICE, 450, 700)).setMinMargins(PrintAttributes.Margins.NO_MARGINS).build()
-        val document = PrintedPdfDocument(WorshipSongApplication.context, printAttrs)
+        val document = PrintedPdfDocument(WorshipSongApplication.context!!, printAttrs)
         for (i in songs.indices)
         {
             val song = songs[i]

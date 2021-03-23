@@ -77,7 +77,7 @@ class FavouriteSongsActivity : AbstractAppCompactActivity(), SongContentViewList
 
     private fun getFavouriteName(): String
     {
-        return favouriteName ?: intent.getStringExtra(CommonConstants.SERVICE_NAME_KEY)
+        return favouriteName ?: intent.getStringExtra(CommonConstants.SERVICE_NAME_KEY)!!
     }
 
     private fun displayHelpActivity()

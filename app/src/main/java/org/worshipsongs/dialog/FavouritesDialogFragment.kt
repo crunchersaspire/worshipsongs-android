@@ -44,7 +44,7 @@ class FavouritesDialogFragment : DialogFragment()
             addFavouritesDialogFragment.show(activity!!.supportFragmentManager, AddFavouritesDialogFragment::class.java.simpleName)
         } else
         {
-            val songDragDrop = SongDragDrop(id.toLong(), songName, false)
+            val songDragDrop = SongDragDrop(id.toLong(), songName!!, false)
             songDragDrop.tamilTitle = localisedName
             favouriteService.save(names[which], songDragDrop)
             Toast.makeText(activity, "Song added to favourite...!", Toast.LENGTH_LONG).show()

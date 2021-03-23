@@ -7,7 +7,7 @@ sonarqube {
     //noinspection GroovyAssignabilityCheck
     androidVariant 'debug'
     properties {
-        def libraries = project.android.sdkDirectory.getPath() + "/platforms/android-28/android.jar," +
+        def libraries = project.android.sdkDirectory.getPath() + "/platforms/android-30/android.jar," +
                 "build/intermediates/**/classes.jar"
         property "sonar.host.url", "http://sonarqube.mcruncher.com"
         property "sonar.projectName", "WORSHIPSONGS::ANDROID"

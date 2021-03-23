@@ -30,7 +30,7 @@ class HttpAsyncTask(private val context: AppCompatActivity) : AsyncTask<String, 
     private val commitMessageParser = CommitMessageParser()
 
     private val remoteUrl: String
-        get() = sharedPreferences!!.getString(CommonConstants.REMOTE_URL, context.getString(R.string.remoteUrl))
+        get() = sharedPreferences!!.getString(CommonConstants.REMOTE_URL, context.getString(R.string.remoteUrl))!!
 
     init
     {

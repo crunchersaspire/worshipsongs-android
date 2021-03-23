@@ -50,7 +50,7 @@ class PresentSongActivity : AppCompatActivity()
         songService = SongService(this)
         val bundle = intent.extras
         val title = bundle!!.getString(CommonConstants.TITLE_KEY)
-        song = songService!!.findContentsByTitle(title)
+        song = songService!!.findContentsByTitle(title!!)
         setActionBar()
     }
 
