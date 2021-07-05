@@ -1,8 +1,6 @@
 package org.worshipsongs
 
 
-import org.apache.commons.lang3.StringUtils
-
 /**
  * Author: Seenivasan
  * Version: 2.1.0
@@ -22,6 +20,7 @@ object CommonConstants
     val MESSAGE_KEY = "message"
     val POSITION_KEY = "position"
     val VERSION_KEY = "version"
+    val SONG_BOOK_NAME_KEY = "songBookName"
 
     val DATABASE_NAME = "songs.sqlite"
     val INDEX_KEY = "index"

@@ -9,11 +9,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-
 import org.worshipsongs.CommonConstants
 import org.worshipsongs.R
-
-import java.util.HashMap
+import java.util.*
 
 /**
  * Author : Madasamy
@@ -46,6 +44,7 @@ class TitleAdapter<T>(context: AppCompatActivity, @LayoutRes resource: Int) : Ar
         maps[CommonConstants.PLAY_IMAGE_KEy] = getPlayImageView(view)
         maps[CommonConstants.OPTIONS_IMAGE_KEY] = getOptionsImageView(view)
         maps[CommonConstants.POSITION_KEY] = position
+        maps[CommonConstants.SONG_BOOK_NAME_KEY] = getSongBookNameTextView(view)
         titleAdapterListener!!.setViews(maps, getItem(position))
     }
 
@@ -72,6 +71,11 @@ class TitleAdapter<T>(context: AppCompatActivity, @LayoutRes resource: Int) : Ar
     private fun getOptionsImageView(rowView: View): ImageView
     {
         return rowView.findViewById<View>(R.id.option_image_view) as ImageView
+    }
+
+    private fun getSongBookNameTextView(view: View): TextView
+    {
+        return view.findViewById<View>(R.id.songBookName_text_view) as TextView
     }
 
     fun addObjects(objects: List<T>)

@@ -13,6 +13,7 @@
     <string name="feedback_subject">Worship Songs Android Feedback - %1$s</string>
     <string name="version">Version: %1$s</string>
     <string name="share">Share</string>
+    <string name="song_book">பாடல் புத்தகம்</string>
 
     <!--Tabs -->
     <string name="titles">தலைப்புகள்</string>

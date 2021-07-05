@@ -127,6 +127,15 @@
             app:defaultValue="true"
             app:iconSpaceReserved="false"
             app:key="prefVideoPlay" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:enabled="true"
+            android:title="@string/displaySongbookTitle"
+            android:summary="@string/displaySongbookSummary"
+            app:defaultValue="false"
+            app:iconSpaceReserved="false"
+            app:key="prefDisplaySongbook" />
     </PreferenceCategory>
 
     <PreferenceCategory

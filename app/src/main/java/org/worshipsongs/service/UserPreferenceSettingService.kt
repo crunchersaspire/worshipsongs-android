@@ -77,6 +77,9 @@ class UserPreferenceSettingService
     val isTamil: Boolean
         get() = sharedPreferences!!.getInt(CommonConstants.LANGUAGE_INDEX_KEY, 0) == 0
 
+    val displaySongBook: Boolean
+        get() = sharedPreferences!!.getBoolean("prefDisplaySongbook", false)
+
     constructor()
     {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)

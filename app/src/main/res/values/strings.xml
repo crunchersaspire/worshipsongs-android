@@ -39,6 +39,8 @@
     <string name="pref_video_settings">Video Settings</string>
     <string name="playVideoTitle">Play video</string>
     <string name="videoPlaySummary">Enable/Disable video playing</string>
+    <string name="displaySongbookTitle">Display song book</string>
+    <string name="displaySongbookSummary">Display song book below songs</string>
     <!--<string name="pref_restore_default_settings">Restore Settings</string>-->
     <string name="advanced">Advanced</string>
     <string name="home_view_category_title">Home view settings</string>
@@ -71,6 +73,7 @@
     <string name="settings">Settings</string>
     <string name="about">About</string>
 
+    <string name="song_book">Song book</string>
     <string name="titles">Titles</string>
     <string name="artists">Authors</string>
     <string name="playlists">Favourites</string>

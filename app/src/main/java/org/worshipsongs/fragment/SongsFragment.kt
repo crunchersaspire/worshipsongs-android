@@ -53,8 +53,10 @@ class SongsFragment : Fragment(), TitleAdapter.TitleAdapterListener<Song>, ITabF
     private val preferenceSettingService = UserPreferenceSettingService()
     private val popupMenuService = PopupMenuService()
     private var songService: SongService? = null
+    private var songBookService: SongBookService? = null
     private var databaseService: DatabaseService? = null
     private var presentationScreenService: PresentationScreenService? = null
+    private val userPreferenceSettingService = UserPreferenceSettingService()
 
     private val type: String
         get()
@@ -110,6 +112,7 @@ class SongsFragment : Fragment(), TitleAdapter.TitleAdapterListener<Song>, ITabF
         }
         databaseService = DatabaseService(activity!!)
         songService = SongService(activity!!.applicationContext)
+        songBookService = SongBookService(activity!!.applicationContext)
         presentationScreenService = PresentationScreenService(activity!!)
         setHasOptionsMenu(true)
         initSetUp()
@@ -323,7 +326,20 @@ class SongsFragment : Fragment(), TitleAdapter.TitleAdapterListener<Song>, ITabF
         val optionsImageView = objects[CommonConstants.OPTIONS_IMAGE_KEY] as ImageView?
         optionsImageView!!.visibility = View.VISIBLE
         optionsImageView.setOnClickListener(imageOnClickListener(song.title!!))
+
+        showSongBook(song, objects)
     }
+
+    private fun showSongBook(song: Song, objects: Map<String, Any>)
+    {
+        val songBookNameList = songBookService?.findSongBookName(song.id)
+        val songBookTextView = objects[CommonConstants.SONG_BOOK_NAME_KEY] as TextView?
+        songBookTextView!!.visibility = if (canDisplaySongBook(songBookNameList)) View.VISIBLE else View.GONE
+        songBookTextView.text = songBookNameList!!.joinToString()
+    }
+
+    private fun canDisplaySongBook(songBookNameList: List<String>?) =
+            userPreferenceSettingService.displaySongBook && songBookNameList!!.isNotEmpty()
 
     private fun onItemClickListener(): AdapterView.OnItemClickListener
     {
